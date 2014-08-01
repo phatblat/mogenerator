@@ -294,7 +294,7 @@ NSString  *gCustomBaseClassForced;
                 } else {
                     type = [self _resolveKeyPathType:[lhs keyPath]];
                 }
-                type = [type stringByAppendingString:@"*"];
+                type = [type stringByAppendingString:@" *"];
                 // make sure that no repeated variables are entered here.
                 if (![self bindingsArray:bindings_ containsVariableNamed:[rhs variable]]) {
                     [bindings_ addObject:[NSDictionary dictionaryWithObjectsAndKeys:
@@ -450,7 +450,7 @@ NSString  *gCustomBaseClassForced;
     } else if ([result isEqualToString:@"NSObject"]) {
         result = @"id";
     } else {
-        result = [result stringByAppendingString:@"*"]; // Make it a pointer.
+        result = [result stringByAppendingString:@" *"]; // Make it a pointer.
     }
     return result;
 }
